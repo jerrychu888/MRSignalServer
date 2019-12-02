@@ -33,7 +33,7 @@ This project is used for MR signal server integration
 **Set up forever**
 
 ``` bash
-  $ forever start server.js
+  $ forever start signalserver.js
 ```
 
 **Check**
