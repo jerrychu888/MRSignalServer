@@ -44,7 +44,7 @@ This project is used for MR signal server integration
 
 *	You can edit `.env` file if you want to change the server port and file generate location for running MR 
 
-##Auto start while server booting
+## Auto start while server booting
 
 `Windows`
 
