@@ -13,13 +13,13 @@ This project is used for MR signal server integration
 **Install Yarn [[2]]**
 
 ``` bash
-  $ npm install yarn
+  $ npm install -g yarn
 ```
 
 **Install forever**
 
 ``` bash
-  $ npm install forever
+  $ npm install -g forever
 ```
 
 ## Usage
