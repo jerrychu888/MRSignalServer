@@ -27,7 +27,7 @@ This project is used for MR signal server integration
 **Recover used packages**
 
 ``` bash
-  $ npm install forever-monitor
+  $ yarn
 ```
 
 **Set up forever**
