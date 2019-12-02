@@ -19,7 +19,7 @@ This project is used for MR signal server integration
 **Install forever**
 
 ``` bash
-  $ npm install forever-monitor
+  $ npm install forever
 ```
 
 ## Usage
@@ -43,6 +43,21 @@ This project is used for MR signal server integration
 ```
 
 *	You can edit `.env` file if you want to change the server port and file generate location for running MR 
+
+##Auto start while server booting
+
+`Windows`
+
+* Create the start.bat
+```
+C:
+
+cd C:\MRSignalServer
+
+forever start signalserver.js
+```
+
+* Then `Win+R` type `shell:startup` press `Enter` , drag the start.bat into the startup directory
 
 
 [0]: https://nodejs.org/en/
