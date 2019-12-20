@@ -21,16 +21,20 @@ app.listen(port, () => {
 //Listening signal
 /*
 {
-  "symbol":"NQ",
-  "orderLots":1,
-  "orderDateTime":"2019-12-01 11:00:01",
+	"symbol":"YM",
+	"strategyId":"windu01",
+	"orderLots":-1,
+	"maxLots":4,
+	"orderDateTime":"2019-12-20 22:56:12"
 }
 */
 app.post('/windu/signals', async (req, res) => {
 
   let schema = {
     symbol:Joi.string().min(1).required(),// 長度至少1字
+    strategyId:Joi.string().min(1).required(),// 長度至少1字
     orderLots: Joi.number().required(), // 數字＋必填
+    maxLots: Joi.number().required(), // 數字＋必填
     orderDateTime: Joi.string() // 字串
   };
   let result = Joi.validate(req.body, schema);
@@ -53,8 +57,8 @@ app.post('/windu/signals', async (req, res) => {
 //商品,策略名稱,最大口數,0,0,1,0,0,0,0,0,目前倉位,0,0,0,0,0,0
 async function writeSignal(signal) {
   const symbol = signal.symbol;
-  const source = "windu01";
-  const maxLots = 3;
+  const source = signal.strategyId;
+  const maxLots = signal.maxLots;
   const fileName = symbol+'.txt';
   const orderLots = signal.orderLots;
   var signalContent = `@${symbol},${source},${maxLots},0,0,1,0,0,0,0,0,${orderLots},0,0,0,0,0,0`;
